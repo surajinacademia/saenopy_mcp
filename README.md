@@ -1,5 +1,7 @@
 # saenopy MCP
 
+[![CI](https://github.com/surajinacademia/saenopy_mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/surajinacademia/saenopy_mcp/actions/workflows/ci.yml)
+
 An MCP server that lets an AI assistant run 3D traction force microscopy with [saenopy](https://github.com/rgerum/saenopy). It measures how a cell or organoid deforms the collagen around it, then fits the forces that caused the deformation.
 
 ![Raw organoid image and the matrix displacement measured through this server](examples/organoid/test-run/before-and-after.png)
@@ -94,7 +96,7 @@ uv venv --python 3.11 .venv && uv pip install --python .venv/bin/python -e '.[de
 .venv/bin/python tests/test_public_organoid.py examples/organoid examples/organoid/replay
 ```
 
-`pytest` checks input handling in about a second. The last command runs all four tools through a real MCP client, in the order above, and compares the displacement with saenopy's published result for the same organoid. The stored run agrees with it to Pearson r = 0.99997 and a per-component RMSE of 0.027 µm over 1,637 nodes; the test also checks that the server refuses to overwrite a file and rejects a missing time point.
+`pytest` checks input handling in about a second; CI runs it on Python 3.10–3.12 for every push. The last command runs all four tools through a real MCP client, in the order above, and compares the displacement with saenopy's published result for the same organoid. The stored run agrees with it to Pearson r = 0.99997 and a per-component RMSE of 0.027 µm over 1,637 nodes; the test also checks that the server refuses to overwrite a file and rejects a missing time point.
 
 ## Credits and license
 
