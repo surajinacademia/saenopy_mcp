@@ -1,0 +1,51 @@
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Python-generated files and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+wheels/
+
+# Testing, linting, and type-checking caches
+.pytest_cache/
+.coverage
+.coverage.*
+.mypy_cache/
+.ruff_cache/
+
+# Public example data (fetched by scripts/fetch_organoid_example.py) and replay outputs
+examples/organoid/raw/
+examples/organoid/reference/
+examples/organoid/replay*
+
+# Local editor and agent state
+.agents/
+.claude/
+.codex/
+.cursor/
+.idea/
+.vscode/
+.mcp.json
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# Local agent rules and machine configuration (never published)
+/AGENTS.md
+/CLAUDE.md
+/.mcp.json
+*.code-workspace

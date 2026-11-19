@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saenopy-mcp"
+version = "0.1.0"
+description = "MCP server for 3D traction force microscopy with saenopy"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{ name = "Suraj Sahu", email = "ssahu2@ucmerced.edu" }]
+dependencies = ["saenopy==1.0.9", "mcp>=1.12,<2", "numpy>=1.26.4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/surajinacademia/saenopy_mcp"
+Repository = "https://github.com/surajinacademia/saenopy_mcp"
+"Bug Tracker" = "https://github.com/surajinacademia/saenopy_mcp/issues"
+
+[project.scripts]
+saenopy-mcp = "saenopy_mcp.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_server.py"]

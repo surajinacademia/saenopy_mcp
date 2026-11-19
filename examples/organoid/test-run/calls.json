@@ -1,0 +1,304 @@
+[
+  {
+    "tool": "inspect_result",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/reference/Pos007_S001_t50_z{z}_ch00_eval.saenopy"
+    },
+    "result": {
+      "saenopy_version": "1.0.9",
+      "image_stacks": 1,
+      "separate_reference": true,
+      "time_interval_s": null,
+      "voxel_size_um": [
+        1.444,
+        1.444,
+        1.976
+      ],
+      "fields": [
+        {
+          "index": 0,
+          "piv": true,
+          "force_fit": true
+        }
+      ],
+      "piv": {
+        "window_size": 40.0,
+        "element_size": 30.0,
+        "signal_to_noise": 1.3,
+        "drift_correction": true
+      },
+      "mesh": {
+        "reference_stack": "first",
+        "element_size": 30.0,
+        "mesh_size": [
+          738.0,
+          738.0,
+          738.0
+        ]
+      },
+      "material": {
+        "k": 6062.0,
+        "d_0": 0.0025,
+        "lambda_s": 0.0804,
+        "d_s": 0.034
+      },
+      "solver": {
+        "alpha": 10000000000.0,
+        "step_size": 0.33,
+        "max_iterations": 1400,
+        "rel_conv_crit": 1e-07,
+        "prev_t_as_start": false
+      }
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "estimate_displacement",
+    "arguments": {
+      "reference_template": "/path/to/saenopy_mcp/examples/organoid/raw/4_OrganoidTFM/Pos007_S001_t6_z{z}_ch00.tif",
+      "deformed_template": "/path/to/saenopy_mcp/examples/organoid/raw/4_OrganoidTFM/Pos007_S001_t50_z{z}_ch00.tif",
+      "output_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-piv.saenopy",
+      "voxel_size_um": [
+        1.444,
+        1.444,
+        1.976
+      ],
+      "window_um": 40.0,
+      "spacing_um": 30.0,
+      "signal_to_noise": 1.3,
+      "drift_correction": true
+    },
+    "result": {
+      "path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-piv.saenopy",
+      "shape_yxzc": [
+        512,
+        512,
+        52,
+        1
+      ],
+      "unit": "m",
+      "nodes": 1728,
+      "finite_vectors": 1637,
+      "median_magnitude": 4.435047471595782e-06,
+      "max_magnitude": 8.367635525608098e-06
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "inspect_result",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-piv.saenopy"
+    },
+    "result": {
+      "saenopy_version": "1.0.9",
+      "image_stacks": 1,
+      "separate_reference": true,
+      "time_interval_s": null,
+      "voxel_size_um": [
+        1.444,
+        1.444,
+        1.976
+      ],
+      "fields": [
+        {
+          "index": 0,
+          "piv": true,
+          "force_fit": false
+        }
+      ],
+      "piv": {
+        "window_size": 40.0,
+        "element_size": 30.0,
+        "signal_to_noise": 1.3,
+        "drift_correction": true
+      },
+      "mesh": null,
+      "material": null,
+      "solver": null
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "export_field",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-piv.saenopy",
+      "field": "piv",
+      "time_index": 0,
+      "output_csv": "/path/to/saenopy_mcp/examples/organoid/test-run/piv.csv"
+    },
+    "result": {
+      "path": "/path/to/saenopy_mcp/examples/organoid/test-run/piv.csv",
+      "field": "piv",
+      "unit": "m",
+      "nodes": 1728,
+      "finite_vectors": 1637,
+      "median_magnitude": 4.435047471595782e-06,
+      "max_magnitude": 8.367635525608098e-06
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "export_field",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/reference/Pos007_S001_t50_z{z}_ch00_eval.saenopy",
+      "field": "piv",
+      "time_index": 0,
+      "output_csv": "/path/to/saenopy_mcp/examples/organoid/test-run/reference-piv.csv"
+    },
+    "result": {
+      "path": "/path/to/saenopy_mcp/examples/organoid/test-run/reference-piv.csv",
+      "field": "piv",
+      "unit": "m",
+      "nodes": 1728,
+      "finite_vectors": 1637,
+      "median_magnitude": 4.4198410082415265e-06,
+      "max_magnitude": 8.389606189349694e-06
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "export_field",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/reference/Pos007_S001_t50_z{z}_ch00_eval.saenopy",
+      "field": "fitted forces",
+      "time_index": 0,
+      "output_csv": "/path/to/saenopy_mcp/examples/organoid/test-run/reference-forces.csv"
+    },
+    "result": {
+      "path": "/path/to/saenopy_mcp/examples/organoid/test-run/reference-forces.csv",
+      "field": "fitted forces",
+      "unit": "N",
+      "nodes": 15625,
+      "finite_vectors": 15625,
+      "median_magnitude": 8.50440062594235e-15,
+      "max_magnitude": 6.132313747650521e-08
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "export_field",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-piv.saenopy",
+      "field": "piv",
+      "time_index": 0,
+      "output_csv": "/path/to/saenopy_mcp/examples/organoid/test-run/piv.csv"
+    },
+    "result": null,
+    "expected_error": true
+  },
+  {
+    "tool": "export_field",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-piv.saenopy",
+      "field": "piv",
+      "time_index": 30,
+      "output_csv": "/path/to/saenopy_mcp/examples/organoid/test-run/absent.csv"
+    },
+    "result": null,
+    "expected_error": true
+  },
+  {
+    "tool": "reconstruct_forces",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-piv.saenopy",
+      "output_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-force-fit.saenopy",
+      "mesh_spacing_um": 60.0,
+      "mesh_size_um": [
+        480.0,
+        480.0,
+        240.0
+      ],
+      "stiffness_pa": 6062.0,
+      "buckling_strain": 0.0025,
+      "stiffening_strain": 0.0804,
+      "stiffening_scale": 0.034,
+      "alpha": 10000000000.0,
+      "max_iterations": 80,
+      "relative_convergence": 0.01,
+      "step_size": 0.33
+    },
+    "result": {
+      "path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-force-fit.saenopy",
+      "unit": "N",
+      "iterations": 14,
+      "reached_iteration_limit": false,
+      "nodes": 405,
+      "finite_vectors": 405,
+      "median_magnitude": 0.0,
+      "max_magnitude": 1.3151811203928754e-11
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "inspect_result",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-force-fit.saenopy"
+    },
+    "result": {
+      "saenopy_version": "1.0.9",
+      "image_stacks": 1,
+      "separate_reference": true,
+      "time_interval_s": null,
+      "voxel_size_um": [
+        1.444,
+        1.444,
+        1.976
+      ],
+      "fields": [
+        {
+          "index": 0,
+          "piv": true,
+          "force_fit": true
+        }
+      ],
+      "piv": {
+        "window_size": 40.0,
+        "element_size": 30.0,
+        "signal_to_noise": 1.3,
+        "drift_correction": true
+      },
+      "mesh": {
+        "element_size": 60.0,
+        "mesh_size": [
+          480.0,
+          480.0,
+          240.0
+        ],
+        "reference_stack": "first"
+      },
+      "material": {
+        "k": 6062.0,
+        "d_0": 0.0025,
+        "lambda_s": 0.0804,
+        "d_s": 0.034
+      },
+      "solver": {
+        "alpha": 10000000000.0,
+        "step_size": 0.33,
+        "max_iterations": 80,
+        "rel_conv_crit": 0.01,
+        "prev_t_as_start": false
+      }
+    },
+    "expected_error": false
+  },
+  {
+    "tool": "export_field",
+    "arguments": {
+      "result_path": "/path/to/saenopy_mcp/examples/organoid/test-run/organoid-force-fit.saenopy",
+      "field": "fitted forces",
+      "time_index": 0,
+      "output_csv": "/path/to/saenopy_mcp/examples/organoid/test-run/forces.csv"
+    },
+    "result": {
+      "path": "/path/to/saenopy_mcp/examples/organoid/test-run/forces.csv",
+      "field": "fitted forces",
+      "unit": "N",
+      "nodes": 405,
+      "finite_vectors": 405,
+      "median_magnitude": 0.0,
+      "max_magnitude": 1.3151811203928754e-11
+    },
+    "expected_error": false
+  }
+]
