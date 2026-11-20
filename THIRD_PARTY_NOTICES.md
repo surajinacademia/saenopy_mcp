@@ -23,3 +23,7 @@ Installing the server installs these packages under their own licenses:
 - `mcp`, `numpy`, `scipy`, `tifffile`, and `matplotlib` (MIT or BSD)
 
 Anyone who distributes a frozen binary that combines these packages must meet the copyleft terms of the GPL-licensed ones.
+
+## Walkthrough poster
+
+The logo and images in `walkthrough/poster.pdf` and `walkthrough/poster.png` keep their own terms; [walkthrough/SOURCES.md](walkthrough/SOURCES.md) lists each source and license.
