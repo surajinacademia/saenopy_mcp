@@ -8,6 +8,8 @@ An MCP server that lets an AI assistant run 3D traction force microscopy with [s
 
 *A: raw organoid image. B: matrix displacement measured through this server. Data: saenopy's public OrganoidTFM example ([methods](examples/organoid/test-run/Supplementary_Methods.md)).*
 
+A one-page [walkthrough poster (PDF)](https://github.com/surajinacademia/saenopy_mcp/blob/main/walkthrough/poster.pdf) walks you step by step from setup to your first results, for people who use AI apps but do not code.
+
 ## Tools
 
 Run them in this order:
